@@ -2,23 +2,23 @@
    ZENITH — Service Worker (Offline PWA)
    ========================================= */
 
-const CACHE_NAME = 'zenith-v1';
+const CACHE_NAME = 'zenith-v2';
 const ASSETS = [
-    '/',
-    '/index.html',
-    '/manifest.json',
-    '/css/index.css',
-    '/css/components.css',
-    '/css/screens.css',
-    '/css/animations.css',
-    '/js/store.js',
-    '/js/vault.js',
-    '/js/engine.js',
-    '/js/screens.js',
-    '/js/app.js',
-    '/icons/icon-192.png',
-    '/icons/icon-512.png',
-    '/icons/apple-touch-icon.png',
+    './',
+    './index.html',
+    './manifest.json',
+    './css/index.css',
+    './css/components.css',
+    './css/screens.css',
+    './css/animations.css',
+    './js/store.js',
+    './js/vault.js',
+    './js/engine.js',
+    './js/screens.js',
+    './js/app.js',
+    './icons/icon-192.png',
+    './icons/icon-512.png',
+    './icons/apple-touch-icon.png',
 ];
 
 // Install — cache all assets
@@ -58,7 +58,7 @@ self.addEventListener('fetch', (event) => {
         }).catch(() => {
             // Offline fallback
             if (event.request.destination === 'document') {
-                return caches.match('/index.html');
+                return caches.match('./index.html');
             }
         })
     );
